@@ -9,4 +9,8 @@ class Solution:
         n = len(s)
         self.revStr(0, n, s)
 
+# def rev(r):
+#     return r[::-1]
+# a = ["h", "e", "l", "l", "o"]
+# print(rev(a))
 
