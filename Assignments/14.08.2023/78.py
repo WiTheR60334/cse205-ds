@@ -1,11 +1,13 @@
 class Solution:
-    def subsets(self, nums):
-        n = len(nums)
-        subsets = []
-        for i in range(1 << n):
-            sub = []
-            for j in range(n):
-                if (i & (1 << j)) != 0:
-                    sub.append(nums[j])
-            subsets.append(sub)
-        return subsets
+    def subsets(self, nums): 
+        l=[]
+        x=[]
+        n=len(nums)
+        def helper(nums,i,l):
+            if i<0:
+                x.append(l)
+                return 0
+            helper(nums,i-1,l+[nums[i]])     
+            helper(nums,i-1,l)              
+        helper(nums,n-1,l)
+        return x
