@@ -1,13 +1,13 @@
 class Solution:
     def subsets(self, nums): 
-        l=[]
-        x=[]
-        n=len(nums)
-        def helper(nums,i,l):
-            if i<0:
-                x.append(l)
+        a=[]
+        b=[]
+        length = len(nums)
+        def rec(nums, i, a):
+            if i<0 :
+                b.append(a)
                 return 0
-            helper(nums,i-1,l+[nums[i]])     
-            helper(nums,i-1,l)              
-        helper(nums,n-1,l)
-        return x
+            rec(nums, i-1, a + [nums[i]])    
+            rec(nums, i-1, a)
+        rec(nums,length-1,a)
+        return b  
