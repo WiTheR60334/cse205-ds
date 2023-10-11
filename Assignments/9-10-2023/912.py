@@ -1,4 +1,4 @@
-*class Solution:
+class Solution:
     def sortArray(self, nums: List[int]) -> List[int]:
         def merge_sort(arr):
             if len(arr) <= 1:
